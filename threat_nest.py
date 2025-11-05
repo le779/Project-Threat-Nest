@@ -1,21 +1,30 @@
-# Project Threat Nest - cross-platform security system
+"""
+Project Threat Nest: concise cross-platform security helper.
+Provides stub for threat detection and basic data hiding using base64.
+"""
+
+import base64
+import platform
+
 
 def protect():
-    """
-    Placeholder function to detect and mitigate threats.
-    """
-    pass
+    """Simulate threat detection; stub for future enhancements."""
+    print(f"Protecting on {platform.system()}...")
 
 
 def hide_data(data: bytes) -> bytes:
-    """
-    Placeholder function to hide/encrypt data.
-    """
-    # This would implement encryption or steganography.
-    return data
+    """Hide data using base64 encoding."""
+    return base64.b64encode(data)
+
+
+def reveal_data(hidden: bytes) -> bytes:
+    """Reveal data by decoding base64."""
+    return base64.b64decode(hidden)
 
 
 if __name__ == "__main__":
-    sample = b"secret"
-    hidden = hide_data(sample)
-    print("Data hidden:", hidden)
+    protect()
+    secret = b"secret"
+    hidden = hide_data(secret)
+    print("Hidden:", hidden)
+    print("Revealed:", reveal_data(hidden))
